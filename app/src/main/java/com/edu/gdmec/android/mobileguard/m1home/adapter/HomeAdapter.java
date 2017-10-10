@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.edu.gdmec.android.mobileguard.R;
 
 /**
@@ -42,6 +41,7 @@ public class HomeAdapter extends BaseAdapter{
         ImageView iv_icon = view1.findViewById(R.id.iv_home);
         TextView tv_name=view1.findViewById(R.id.tv_name);
         iv_icon.setImageResource(imageId[i]);
-        return null;
+        tv_name.setText(names[i]);
+        return view1;
     }
 }
