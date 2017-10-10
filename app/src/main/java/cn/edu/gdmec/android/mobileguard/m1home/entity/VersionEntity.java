@@ -1,4 +1,4 @@
-package com.edu.gdmec.android.mobileguard.m1home.entity;
+package cn.edu.gdmec.android.mobileguard.m1home.entity;
 
 /**
  * Created by shadow on 2017/10/10.

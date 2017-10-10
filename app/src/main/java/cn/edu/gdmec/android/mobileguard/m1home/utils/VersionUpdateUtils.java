@@ -1,17 +1,15 @@
-package com.edu.gdmec.android.mobileguard.m1home.utils;
+package cn.edu.gdmec.android.mobileguard.m1home.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
-import com.edu.gdmec.android.mobileguard.R;
-import com.edu.gdmec.android.mobileguard.m1home.HomeActivity;
-import com.edu.gdmec.android.mobileguard.m1home.entity.VersionEntity;
+import cn.edu.gdmec.android.mobileguard.m1home.HomeActivity;
+import cn.edu.gdmec.android.mobileguard.m1home.entity.VersionEntity;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -98,7 +96,7 @@ public class VersionUpdateUtils {
         builder.setTitle("检测到有新版本："+versionEntity.versioncode);
         builder.setMessage(versionEntity.description);
         builder.setCancelable(false);
-        builder.setIcon(R.mipmap.ic_launcher_round);
+        builder.setIcon(cn.edu.gdmec.android.mobileguard.R.mipmap.ic_launcher_round);
         builder.setPositiveButton("立即升级", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface,int i){
