@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
 
+import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m1home.HomeActivity;
 import cn.edu.gdmec.android.mobileguard.m1home.entity.VersionEntity;
 
@@ -93,25 +94,26 @@ public class VersionUpdateUtils {
     }
     private void showUpdateDialog(final VersionEntity versionEntity){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("检测到有新版本："+versionEntity.versioncode);
+        builder.setTitle("检查到有新版本："+versionEntity.versioncode);
         builder.setMessage(versionEntity.description);
         builder.setCancelable(false);
-        builder.setIcon(cn.edu.gdmec.android.mobileguard.R.mipmap.ic_launcher_round);
-        builder.setPositiveButton("立即升级", new DialogInterface.OnClickListener(){
+        builder.setIcon(R.mipmap.ic_launcher_round);
+        builder.setPositiveButton("立刻升级", new DialogInterface.OnClickListener( ) {
             @Override
-            public void onClick(DialogInterface dialogInterface,int i){
+            public void onClick(DialogInterface dialogInterface, int i) {
                 downloadNewApk(versionEntity.apkurl);
             }
         });
-        builder.setNegativeButton("暂不升级", new DialogInterface.OnClickListener(){
+        builder.setNegativeButton("暂不升级", new DialogInterface.OnClickListener( ) {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i){
-                dialogInterface.dismiss();;
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
                 enterHome();
             }
         });
         builder.show();
     }
+
     private void enterHome(){
         handler.sendEmptyMessage(MESSAGE_ENTERHOME);
     }
