@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -107,7 +108,7 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         //隐藏标题栏应用名称
         setContentView(R.layout.activity_security_phone);
         initView();
