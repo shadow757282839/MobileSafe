@@ -107,9 +107,9 @@ public class SecurityPhoneActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_security_phone);
-        //隐藏标题栏应用名称
         getSupportActionBar().hide();
+        //隐藏标题栏应用名称
+        setContentView(R.layout.activity_security_phone);
         initView();
         fillData();
     }
