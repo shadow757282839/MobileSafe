@@ -19,6 +19,7 @@ import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.SetupPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.receiver.MyDeviceAdminReceiver;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.MD5Utils;
+import cn.edu.gdmec.android.mobileguard.m3communicationguard.SecurityPhoneActivity;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -54,9 +55,13 @@ public class HomeActivity extends AppCompatActivity {
                             showSetupPswdDialog();
                         }
                         break;
+                    case 1:
+                        startActivity(SecurityPhoneActivity.class);
+                        break;
                 }
             }
         });
+
         //1.获取设备管理员
         policyManager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
         //2.申请权限 MyDeviceAdminReciever继承DeviceAdminReceiver

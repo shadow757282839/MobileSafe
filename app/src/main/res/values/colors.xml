@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <!--手机防盗模块需要用到-->
     <color name="purple">#5542B8</color>
+    <!--通讯卫士模块要用到2017.11.4-->
+    <color name="bright_purple">#C21809</color>
+    <color name="light_gray">#D1D0CE</color>
 </resources>
