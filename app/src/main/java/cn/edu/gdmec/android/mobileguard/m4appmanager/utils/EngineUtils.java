@@ -1,11 +1,15 @@
 package cn.edu.gdmec.android.mobileguard.m4appmanager.utils;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.widget.Toast;
+
+import junit.runner.Version;
 
 import cn.edu.gdmec.android.mobileguard.m4appmanager.entity.AppInfo;
 
@@ -59,4 +63,23 @@ public class EngineUtils {
             Toast.makeText(context,"系统应用无法卸载",Toast.LENGTH_LONG).show();
         }
     }
+    //关于应用信息
+    public static void AboutAppData(Context context,AppInfo appInfo){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(appInfo.appName);
+        builder.setMessage(
+                "Version:" + "\n" + appInfo.appVersion+ "\n\n" +
+                        "Install time:" + "\n" +appInfo.inStalldate + "\n\n" +
+                  "Certificate issuer:" +"\n" + appInfo.certMsg + "\n\n" +
+                  "Permission:" + "\n" +appInfo.Permissions
+        );
+        builder.setNegativeButton("确认", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+    }
+    //end
 }

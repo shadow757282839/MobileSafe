@@ -23,7 +23,12 @@ public class AppInfo {
     public boolean isUserApp;
     /**是否选中，默认都为false*/
     public boolean isSelected = false;
-
+    //添加内容
+    public String appVersion;
+    public String inStalldate;
+    public String Permissions;
+    public String certMsg = "";
+//结束
     /**拿到app位置字符串*/
     public String getAppLocation(boolean isInRoom){
         if(isInRoom){

@@ -110,6 +110,11 @@ public class AppManagerAdapter extends BaseAdapter {
             viewHolder.mAppOptionLL = (LinearLayout) view
                     .findViewById(R.id.ll_option_app);
             view.setTag(viewHolder);
+            //添加关于功能
+            viewHolder.mAppAboutTV = (TextView) view
+                    .findViewById(R.id.tv_about_app);
+            //end
+            view.setTag(viewHolder);
         }
         if (appInfo != null) {
             viewHolder.mAppLocationTV.setText(appInfo
@@ -129,6 +134,8 @@ public class AppManagerAdapter extends BaseAdapter {
         viewHolder.mSettingAppTV.setOnClickListener(listener);
         viewHolder.mShareAppTV.setOnClickListener(listener);
         viewHolder.mUninstallTV.setOnClickListener(listener);
+        //添加关于功能
+        viewHolder.mAppAboutTV.setOnClickListener(listener);
 
         return view;
     }
@@ -165,6 +172,8 @@ static class ViewHolder{
     TextView mAppSizeTV;
     /**app名称*/
     TextView mAppNameTV;
+    //关于功能
+    TextView mAppAboutTV;
     /**操作App的线性布局*/
     LinearLayout mAppOptionLL;
 }
@@ -199,6 +208,9 @@ class MyClickListener implements View.OnClickListener {
                     return;
                 }
                 EngineUtils.uninstallApplication(context, appInfo);
+                break;
+            case R.id.tv_about_app:
+                EngineUtils.AboutAppData(context,appInfo);
                 break;
         }
     }

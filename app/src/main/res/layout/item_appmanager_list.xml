@@ -69,9 +69,20 @@
             android:layout_height="match_parent"
             android:background="@color/black30"/>
 "       <TextView
-        android:id="@+id/tv_setting_app"
-        style="@style/tvyellow14sp"
-        android:text="设置"
-        android:drawableTop="@drawable/settingicon_yellow_n"/>
+            android:id="@+id/tv_setting_app"
+            style="@style/tvyellow14sp"
+            android:text="设置"
+            android:drawableTop="@drawable/settingicon_yellow_n"/>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/black30"/>
+        <TextView
+            android:id="@+id/tv_about_app"
+            style="@style/textview14sp"
+            android:text="关于"
+            android:drawableTop="@drawable/settingicon_yellow_n"/>
+
     </LinearLayout>
 </LinearLayout>
