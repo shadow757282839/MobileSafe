@@ -73,7 +73,7 @@ public class EngineUtils {
                   "Certificate issuer:" +"\n" + appInfo.certMsg + "\n\n" +
                   "Permission:" + "\n" +appInfo.Permissions
         );
-        builder.setNegativeButton("确认", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
