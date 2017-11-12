@@ -118,7 +118,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
         //拿到手机剩余内存和SD卡剩余内存
         getMemoryFromPhone();
         initData();
-        initListner();
+        initListener();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class AppManagerActivity extends AppCompatActivity implements View.OnClic
         mSDMemoryTV.setText("剩余SD卡内存:"+str_avail_sd);
     }
 
-    private void initListner(){
+    private void initListener(){
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?>adapterView,View view,final int i,long l){
