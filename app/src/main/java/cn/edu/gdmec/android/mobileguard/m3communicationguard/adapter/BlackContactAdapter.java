@@ -29,6 +29,7 @@ public class BlackContactAdapter extends BaseAdapter {
         TextView mModeTV;
         View mContactImgv;
         View mDeleteView;
+        TextView mTypeTV;
     }
 
     public interface BlackConactCallBack{
@@ -72,11 +73,13 @@ public class BlackContactAdapter extends BaseAdapter {
             holder.mContactImgv = view.findViewById(R.id.view_black_icon);
             holder.mDeleteView = view.findViewById(R.id.view_black_delete);
             view.setTag(holder);
+            holder.mTypeTV=(TextView)view.findViewById(R.id.tv_black_type);
         }else {
             holder = (ViewHolder) view.getTag();
         }
         holder.mNameTV.setText(contactInfos.get(i).contactName+"("+
                 contactInfos.get(i).phoneNumber + ")");
+        holder.mTypeTV.setText(contactInfos.get(i).type);
         holder.mModeTV.setText(contactInfos.get(i).getModeString(
                 contactInfos.get(i).mode));
         holder.mNameTV.setTextColor(context.getResources().getColor(

@@ -11,6 +11,7 @@ public class BlackContactInfo {
     public String contactName;
     /*黑名单拦截模式 1为电话拦截 2是短信拦截 3是电话、短信都拦截*/
     public int mode;
+    public String type;
 
     public String getModeString(int mode){
         switch (mode){
