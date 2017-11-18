@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.widget.Toast;
@@ -73,6 +74,30 @@ public class EngineUtils {
                   "Certificate issuer:" +"\n" + appInfo.certMsg + "\n\n" +
                   "Permission:" + "\n" +appInfo.Permissions
         );
+        builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.show();
+    }
+    public static void ActAppData(Context context,AppInfo appInfo){
+
+        PackageManager pm1 = context.getPackageManager();
+        StringBuffer sb = new StringBuffer();
+        ActivityInfo act[] = pm1.getPackageArchiveInfo(appInfo.apkPath,PackageManager
+                .GET_ACTIVITIES).activities;
+        for (int i=0;i<act.length;i++){
+            sb.append(act[i].toString());
+            sb.append("\n");
+        }
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(appInfo.appName);
+        builder.setMessage(
+              "activities:"+"\n"+sb
+        );
+        builder.setCancelable(false);
         builder.setNegativeButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
