@@ -37,6 +37,7 @@ public class SplashActivity extends AppCompatActivity {
 //                versionUpdateUtils.getCloudVersion("http://android2017.duapp.com/updateinfo.html");
 //            }
 //        }.start();
+        //????
         startActivity(new Intent(this, HomeActivity.class));
         finish();
     }
