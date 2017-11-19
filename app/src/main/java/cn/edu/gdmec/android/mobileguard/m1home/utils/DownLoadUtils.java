@@ -11,7 +11,7 @@ import java.net.URI;
  * Created by shadow on 2017/10/10.
  */
 
-public class DownloadUtils {
+public class DownLoadUtils {
     public void downloadApk(String url,String targetFile,Context context){
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setAllowedOverRoaming(false);
