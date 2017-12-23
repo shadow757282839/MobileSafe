@@ -17,8 +17,8 @@
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <!-- 手机杀毒 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!--缓存-->
-    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <!-- 缓存 -->
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
 
     <application
         android:name=".App"
@@ -106,7 +106,19 @@
         <activity android:name=".m5virusscan.VirusScanSpeedActivity" />
         <activity android:name=".m5virusscan.VirusScanActivity" />
         <activity android:name=".m6cleancache.CacheClearListActivity" />
-        <activity android:name=".m6cleancache.CleanCacheActivity"></activity>
+        <activity android:name=".m6cleancache.CleanCacheActivity" />
+
+        <service
+            android:name=".m8trafficmonitor.service.TrafficMonitoringService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".m8trafficmonitor.reciever.BootCompleteReciever"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <activity android:name=".m8trafficmonitor.TrafficMonitoringActivity" />
+        <activity android:name=".m8trafficmonitor.OperatorSetActivity" />
     </application>
 
 </manifest>
