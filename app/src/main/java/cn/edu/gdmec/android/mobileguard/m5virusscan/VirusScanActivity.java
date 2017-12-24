@@ -44,11 +44,13 @@ public class VirusScanActivity extends AppCompatActivity implements View.OnClick
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            AntiVirusDao dao = new AntiVirusDao(VirusScanActivity.this);
-            String dbVersion = dao.getVirusDbVersion();
-            mDbVersionTV = (TextView) findViewById(R.id.tv_dbversion);
-            mDbVersionTV.setText("病毒数据库版本:"+dbVersion);
-            UpdateDb(dbVersion);
+            if (msg.what == 0){
+                AntiVirusDao dao = new AntiVirusDao(VirusScanActivity.this);
+                String dbVersion = dao.getVirusDbVersion();
+                mDbVersionTV = (TextView) findViewById(R.id.tv_dbversion);
+                mDbVersionTV.setText("病毒数据库版本:"+dbVersion);
+                UpdateDb(dbVersion);
+            }
             super.handleMessage(msg);
         }
     };
