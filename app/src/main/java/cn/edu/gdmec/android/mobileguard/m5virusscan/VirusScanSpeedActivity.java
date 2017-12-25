@@ -111,7 +111,7 @@ public class VirusScanSpeedActivity extends AppCompatActivity implements View.On
 
         for (PackageInfo info : installedPackages) {
             String apkpath = info.applicationInfo.sourceDir;
-            // 检查获取这个文件的 md5特征码
+            // 检查获取这个文件的 md5特征码。。
             String md5info = MD5Utils.getFileMd5(apkpath);
             System.out.println(info.packageName+":"+md5info);
             ScanAppInfo scanInfo = new ScanAppInfo();
